@@ -1,8 +1,8 @@
 //requests
 
 import { getUserData } from "../utils.js";
-
 let host =  "http://localhost:3030";
+
 async function request(method, url, data){
 
     let options = {
@@ -22,7 +22,7 @@ async function request(method, url, data){
     }
     
     try{
-        let finalUrl = host+url;
+        let finalUrl = host + url;
 
         const response = await fetch(finalUrl, options)
        
