@@ -16,7 +16,6 @@ let headerTemplate = (user) => html`
         <nav>
             <ul class="navigation" role="list">
                 <li class="navigation-li"><a href="/">Начало</a></li>
-                <!-- <li class="navigation-li"><a href="/catalog">Настолни игри</a></li> -->
                 <li class="navigation-li"><a href="/ranking">Класации</a></li>
                 <li class="navigation-li"><a href="/about">За нас</a></li>
                 ${user == undefined
