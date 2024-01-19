@@ -18,7 +18,7 @@ async function request(method, url, data){
     //for authorization requests
     let user = getUserData();
     if(user){
-        options.headers[X-Authorization] = user.accessToken;
+        options.headers["X-Authorization"] = user.accessToken;
     }
     
     try{
