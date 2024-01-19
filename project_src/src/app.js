@@ -2,7 +2,7 @@ import {html, render} from '../node_modules/lit-html/lit-html.js';
 import page from '../node_modules/page/page.mjs';
 import { getUserData } from './utils.js';
 
-let headerTemplate = () => html`
+let headerTemplate = (user) => html`
   <div class="logo-container">
             <img src="resources/logo.jpg" alt="Logo" class="logo">
         </div>
@@ -13,9 +13,14 @@ let headerTemplate = () => html`
                 <li class="navigation-li"><a href="/catalog">Настолни игри</a></li>
                 <li class="navigation-li"><a href="/ranking">Класации</a></li>
                 <li class="navigation-li"><a href="/about">За нас</a></li>
-                <li class="navigation-li"><a href="/login">Вход</a></li>
-                <li class="navigation-li"><a href="/register">Регистрация</a></li>
-                <li class="navigation-li"><a href="/logout">Изход</a></li>
+                ${user == undefined
+                ? html` <li class="navigation-li"><a href="/login">Вход</a></li>
+                <li class="navigation-li"><a href="/register">Регистрация</a></li>`
+
+                :html`   
+                <li class="navigation-li"><a href="/logout">Изход</a></li>`
+                }
+            
 
             </ul>
         </nav>
